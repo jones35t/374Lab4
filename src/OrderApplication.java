@@ -39,11 +39,11 @@ public class OrderApplication {
 		
 		if(createOrder())
 		{
-			System.out.print("Finish \n ");
+			System.out.print("End of Order \n ");
 		}
 		else
 		{
-			System.out.print("Order read in failed \n");
+			System.out.print("Order fail \n");
 		}
 
 	}
