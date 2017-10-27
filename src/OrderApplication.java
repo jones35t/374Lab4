@@ -14,11 +14,18 @@ public class OrderApplication {
 	        }
 	    }
 	
-	public static boolean createOrder()
-	{		
+	public static boolean createOrder() throws FileNotFoundException
+	{	
+		OrderApplication oa= new OrderApplication();
+		Product[] prod = new Product[10];
+		oa.importCatalogue(prod); //Loads products from file into a catalogue
+		
 		Order newOrder = new Order();
+		newOrder.CreateLine(prod);
+		
 		double price;
 		price = newOrder.calculatePrice();		
+		
 		if(price != 0 )
 		{
 			System.out.print("The price of this order is: " + price + "\n");
@@ -28,20 +35,16 @@ public class OrderApplication {
 		
 		
 	}
-	public static void main(String[] args) throws FileNotFoundException {
-		OrderApplication oa= new OrderApplication();
-		Product[] prod = new Product[10];
-		oa.importCatalogue(prod);
-		System.out.println(prod[2].getName());
+	public static void main(String[] args) throws FileNotFoundException{
 		
-		/*if(createOrder())
+		if(createOrder())
 		{
 			System.out.print("Finish \n ");
 		}
 		else
 		{
 			System.out.print("Order read in failed \n");
-		}*/
+		}
 
 	}
 
