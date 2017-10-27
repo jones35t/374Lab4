@@ -8,6 +8,8 @@ public String getDateReceived() {
 	return dateReceived;
 }
 public double calculatePrice () {
+	
+	
 	return price;
 }
 }

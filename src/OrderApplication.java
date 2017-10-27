@@ -1,5 +1,19 @@
-
+import java.util.*;
+import java.io.*;
 public class OrderApplication {
+	
+	 public void importCatalogue(Product[] prod)throws FileNotFoundException{
+	        Scanner scanner=new Scanner(new File("Product.csv"));       //read file
+	        scanner.useDelimiter(",");
+	        for(int i =0;i<10;i++){
+	            String newName=scanner.next();
+	            int newID=scanner.nextInt();
+	            Double newPrice = scanner.nextDouble();
+	            prod[i]=new Product(newName,newPrice,newID);                
+	            scanner.nextLine();
+	        }
+	    }
+	
 	public static boolean createOrder()
 	{		
 		Order newOrder = new Order();
@@ -14,15 +28,20 @@ public class OrderApplication {
 		
 		
 	}
-	public static void main(String[] args) {
-		if(createOrder())
+	public static void main(String[] args) throws FileNotFoundException {
+		OrderApplication oa= new OrderApplication();
+		Product[] prod = new Product[10];
+		oa.importCatalogue(prod);
+		System.out.println(prod[2].getName());
+		
+		/*if(createOrder())
 		{
 			System.out.print("Finish \n ");
 		}
 		else
 		{
 			System.out.print("Order read in failed \n");
-		}
+		}*/
 
 	}
 

@@ -2,12 +2,15 @@
 public class OrderLine {
 private int quantity;
 private double price;
+private Product item;
 
-public OrderLine( Product product, int quantity, double price) {
-	
+public OrderLine( Product newProduct, int newQuantity, double newPrice) {
+	item = newProduct;
+	quantity = newQuantity;
+	price = newPrice;
 }
 public Product getProduct() {
-	return;
+	return item;
 }
 public int getQuantity() {
 	return quantity;
