@@ -22,4 +22,17 @@ public double calculatePrice ()  {
 	}
 	return price;
 }
+
+public void delete(int index){
+    line[index].setQuantity(0);
+    System.out.println(line[index].getProduct().getName()+" is deleted");
+}
+
+public void changeQuantity(int index,int num){     //change the quantity for a certain orderline
+	line[index].setQuantity(line[index].getQuantity()+num);     //apply the change
+    if(line[index].getQuantity()<0){                  //if the quantity is less than 0, set the quantity to 0
+        line[index].setQuantity(0);
+    }
+    System.out.println(line[index].getProduct().getName()+"'s quantity has changed with "+num);
+}
 }

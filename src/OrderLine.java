@@ -19,4 +19,8 @@ public double getPrice() {
 	return price;
 }
 
+public void setQuantity(int num){
+    quantity=num;
+}
+
 }

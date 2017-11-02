@@ -26,6 +26,8 @@ public class OrderApplication {
 		double price;
 		price = newOrder.calculatePrice();		
 		
+		newOrder.changeQuantity(2,3);
+		
 		if(price != 0 )
 		{
 			System.out.print("The price of this order is: " + price + "\n");
